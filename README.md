@@ -1,3 +1,9 @@
+<p align="center">
+    <strong>MySqlSaver</strong>
+    [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/kasrakhaksar/mysqlsaver)
+</p>
+
+
 First of all , you must connect to your mysql database with this function :
 
 ```

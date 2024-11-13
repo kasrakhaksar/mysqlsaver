@@ -1,11 +1,17 @@
 Metadata-Version: 2.1
 Name: mysqlSaver
-Version: 0.1.6
+Version: 0.1.7
 Summary: This Is MySQL Package That You Can Save DataFrame As Table, Partition, Update , Primarykey And Unique In MySQL
 Author: Kasra Khaksar
 Author-email: kasrakhaksar17@gmail.com
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
+
+<p align="center">
+    <strong>MySqlSaver</strong>
+    [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/kasrakhaksar/mysqlsaver)
+</p>
+
 
 First of all , you must connect to your mysql database with this function :
 
