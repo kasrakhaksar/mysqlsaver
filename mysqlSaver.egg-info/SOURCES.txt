@@ -1,0 +1,7 @@
+README.md
+setup.py
+mysqlSaver/mysqlSaver.py
+mysqlSaver.egg-info/PKG-INFO
+mysqlSaver.egg-info/SOURCES.txt
+mysqlSaver.egg-info/dependency_links.txt
+mysqlSaver.egg-info/top_level.txt
