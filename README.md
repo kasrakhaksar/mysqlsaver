@@ -1,7 +1,10 @@
-<p align="center">
-    <strong>MySqlSaver</strong>
-    [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/kasrakhaksar/mysqlsaver)
+
+<p style="text-align: center; font-size: 24px; font-weight: bold;">
+    <b>MySqlSaver</b>
+    <br>
+    <a href="https://github.com/kasrakhaksar/mysqlsaver" target="_blank"><img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" alt="GitHub" style="vertical-align: middle; margin-right: 10px;" /></a>
 </p>
+
 
 
 First of all , you must connect to your mysql database with this function :
