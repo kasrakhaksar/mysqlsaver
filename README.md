@@ -119,10 +119,3 @@ partitioner.create_partition_table(
     end_year_partition=2025
 )
 ```
-
-
-## Links
-
-- 🔗 [GitHub Repository](https://github.com/kasrakhaksar/mysqlsaver)
-
----
