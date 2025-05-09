@@ -1,48 +1,131 @@
-
-<p style="text-align: center; font-size: 24px; font-weight: bold;">
-    <b>MySqlSaver</b>
-    <br>
-    <a href="https://github.com/kasrakhaksar/mysqlsaver" target="_blank"><img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" alt="GitHub" style="vertical-align: middle; margin-right: 10px;" /></a>
+<h1 align="center"><strong>MySqlSaver</strong></h1>
+<p align="center">
+    Effortlessly save your pandas DataFrames into MySQL — with automatic table creation and support for primary keys and partitioning.
+    <br><br>
+    <a href="https://github.com/kasrakhaksar/mysqlsaver" target="_blank">
+        <img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" alt="GitHub" />
+    </a>
 </p>
 
 
+A lightweight Python utility for saving pandas DataFrames to MySQL with automatic table creation and schema inference.
 
-First of all , you must connect to your mysql database with this function :
+---
 
+## 📥 Installation
+
+```bash
+pip install mysqlsaver
 ```
-from mysqlSaver.mysqlSaver import *
 
-your_connection = Connection.connect("your_host" , "your_port" , "your_username" , "your_password" , "your_databasename")
+---
+
+## 🔌 Connection
+
+Create a connection to your MySQL database:
+
+```python
+from mysqlSaver.mysqlSaver import Connection
+
+conn = Connection.connect(
+    host="your_host",
+    port="your_port",
+    username="your_username",
+    password="your_password",
+    database="your_database"
+)
 ```
 
-When you make connection to your owen database , you can use "your_connection" variable to use other function like this , for example :
+---
 
-```
-from mysqlSaver.mysqlSaver import *
+## 📊 Data Operations
+
+### Save a DataFrame
+
+```python
+from mysqlSaver.mysqlSaver import Saver
 import pandas as pd
 
-your_connection = Connection.connect("your_host" , "your_port" , "your_username" , "your_password" , "your_databasename")
+df = pd.DataFrame({...})
+saver = Saver(conn)
+saver.sql_saver(df, "table_name")
+```
 
-df = pd.DataFrame({"name" : ['john'] , "lastname" : ["doe"] , 'age' : [19]})
-df_saver = Saver(your_connection)
-df_saver.sql_saver(df , "your_table")
+This function:
+- Creates the table if it does not exist
+- Inserts the DataFrame data
+
+### Save with Primary Key
+
+```python
+saver.sql_saver_with_primarykey(df, "table_name", primary_key_list=["id"])
+```
+
+### Save with Primary Key and Auto-Update
+
+```python
+saver.sql_saver_with_primarykey_and_update(df, "table_name", primary_key_list=["id"])
+```
+
+This performs UPSERT using the primary key.
+
+### Save with Unique Key (No Duplicate Insertions)
+
+```python
+saver.sql_saver_with_unique_key(df, "table_name")
+```
+
+### Update Table Based on Primary Key
+
+```python
+saver.sql_updater_with_primarykey(df, "table_name", primary_key_list=["id"])
+```
+
+---
+
+## 🔍 Checker and Reader
+
+```python
+from mysqlSaver.mysqlSaver import CheckerAndReceiver
+
+checker = CheckerAndReceiver(conn)
+exists = checker.table_exist("table_name")
+df = checker.read_table("table_name")
+```
+
+---
+
+## 🛠️ Table and Database Creation
+
+```python
+from mysqlSaver.mysqlSaver import Creator
+
+creator = Creator(conn)
+creator.database_creator("new_database")
+creator.create_table(df, "new_table")
+```
+
+---
+
+## 🧩 Partitioning Tables
+
+```python
+from mysqlSaver.mysqlSaver import Partition
+
+partitioner = Partition(conn)
+partitioner.create_partition_table(
+    df,
+    "partitioned_table",
+    range_key="your_date_column",
+    primary_key_list=["id"],
+    start_year_partition=2020,
+    end_year_partition=2025
+)
 ```
 
 
-In this function, at first, according to the create_table function, the table is created based on the type of each column in the dataframe .
-You can use other functions such as partition and primarykey and etc. in the same way.
-But some functions like sql_saver_with_primarykey(), we need to give more inputs to be saved in the desired way. For example:
+## 📎 Links
 
+- 🔗 [GitHub Repository](https://github.com/kasrakhaksar/mysqlsaver)
 
-```
-from mysqlSaver.mysqlSaver import *
-import pandas as pd
-
-your_connection = Connection.connect("your_host" , "your_port" , "your_username" , "your_password" , "your_databasename")
-
-df = pd.DataFrame({"name" : ['john'] , "lastname" : ["doe"] , 'age' : [19]})
-df_saver_by_primary_key = Saver(your_connection)
-df_saver_by_primary_key.sql_saver_with_primarykey(df , "your_table" , ['lastname'])
-```
-
-In the code above, you give the function a primary key by typing list and it will set and save your table based on that primary key.
+---
