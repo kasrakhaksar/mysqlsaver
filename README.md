@@ -1,18 +1,15 @@
 <h1 align="center"><strong>MySqlSaver</strong></h1>
 <p align="center">
-    Effortlessly save your pandas DataFrames into MySQL — with automatic table creation and support for primary keys and partitioning.
+    Effortlessly save your pandas DataFrames into MySQL with automatic table creation and support for primary keys and partitioning.
     <br><br>
     <a href="https://github.com/kasrakhaksar/mysqlsaver" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" alt="GitHub" />
     </a>
 </p>
 
-
-A lightweight Python utility for saving pandas DataFrames to MySQL with automatic table creation and schema inference.
-
 ---
 
-## 📥 Installation
+## Installation
 
 ```bash
 pip install mysqlsaver
@@ -20,7 +17,7 @@ pip install mysqlsaver
 
 ---
 
-## 🔌 Connection
+## Connection
 
 Create a connection to your MySQL database:
 
@@ -38,7 +35,7 @@ conn = Connection.connect(
 
 ---
 
-## 📊 Data Operations
+## Data Operations
 
 ### Save a DataFrame
 
@@ -83,7 +80,7 @@ saver.sql_updater_with_primarykey(df, "table_name", primary_key_list=["id"])
 
 ---
 
-## 🔍 Checker and Reader
+## Checker and Reader
 
 ```python
 from mysqlSaver.mysqlSaver import CheckerAndReceiver
@@ -95,7 +92,7 @@ df = checker.read_table("table_name")
 
 ---
 
-## 🛠️ Table and Database Creation
+## Table and Database Creation
 
 ```python
 from mysqlSaver.mysqlSaver import Creator
@@ -107,7 +104,7 @@ creator.create_table(df, "new_table")
 
 ---
 
-## 🧩 Partitioning Tables
+## Partitioning Tables
 
 ```python
 from mysqlSaver.mysqlSaver import Partition
@@ -124,7 +121,7 @@ partitioner.create_partition_table(
 ```
 
 
-## 📎 Links
+## Links
 
 - 🔗 [GitHub Repository](https://github.com/kasrakhaksar/mysqlsaver)
 
