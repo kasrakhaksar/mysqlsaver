@@ -35,7 +35,30 @@ conn = Connection.connect(
 
 ---
 
-## Data Operations
+## Keys Manager
+
+
+
+```python
+from mysqlSaver.mysqlSaver import KeyManager
+
+key_mgr = KeyManager(conn)
+
+
+key_mgr.add_primary_key('my_table', ['id'])
+
+key_mgr.drop_primary_key('my_table')
+
+
+key_mgr.add_unique_key('my_table', ['email' , 'name'])
+
+key_mgr.drop_unique_key('my_table', 'unique_email_name')
+```
+
+
+- Create the primarykey or unique fields
+- Drop the primarykey or unique fields
+
 
 ### Save a DataFrame
 
