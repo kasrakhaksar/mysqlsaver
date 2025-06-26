@@ -13,7 +13,7 @@ package_data = \
 
 setup_kwargs = {
     'name' :'mysqlSaver',
-    'version':'0.2.5',
+    'version':'0.2.6',
     'author':'Kasra Khaksar',
     'author_email':'kasrakhaksar17@gmail.com',
     'description':'This Is MySQL Package That You Can Save DataFrame As Table, Partition, Update , Primarykey And Unique In MySQL',
