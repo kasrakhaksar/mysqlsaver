@@ -3,6 +3,7 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
+
 packages = \
 ['mysqlSaver']
 
@@ -12,7 +13,7 @@ package_data = \
 
 setup_kwargs = {
     'name' :'mysqlSaver',
-    'version':'0.2.3',
+    'version':'0.2.4',
     'author':'Kasra Khaksar',
     'author_email':'kasrakhaksar17@gmail.com',
     'description':'This Is MySQL Package That You Can Save DataFrame As Table, Partition, Update , Primarykey And Unique In MySQL',
@@ -21,6 +22,12 @@ setup_kwargs = {
     'packages': packages,
     'package_data': package_data,
     'python_requires': '>=3.9',
+    'install_requires': [
+    'pandas',
+    'tqdm',
+    'pymysql',
+    'cryptography'
+    ],
 }
 
 

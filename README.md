@@ -22,7 +22,7 @@ pip install mysqlsaver
 Create a connection to your MySQL database:
 
 ```python
-from mysqlSaver.mysqlSaver import Connection
+from mysqlSaver import Connection
 
 conn = Connection.connect(
     host="your_host",
@@ -40,7 +40,7 @@ conn = Connection.connect(
 
 
 ```python
-from mysqlSaver.mysqlSaver import KeyManager
+from mysqlSaver import KeyManager
 
 key_mgr = KeyManager(conn)
 
@@ -63,7 +63,7 @@ key_mgr.drop_unique_key('my_table', 'unique_email_name')
 ### Save a DataFrame
 
 ```python
-from mysqlSaver.mysqlSaver import Saver
+from mysqlSaver import Saver
 import pandas as pd
 
 df = pd.DataFrame({...})
@@ -106,7 +106,7 @@ saver.sql_updater_with_primarykey(df, "table_name", primary_key_list=["id"])
 ## Checker and Reader
 
 ```python
-from mysqlSaver.mysqlSaver import CheckerAndReceiver
+from mysqlSaver import CheckerAndReceiver
 
 checker = CheckerAndReceiver(conn)
 exists = checker.table_exist("table_name")
@@ -118,7 +118,7 @@ df = checker.read_table("table_name")
 ## Table and Database Creation
 
 ```python
-from mysqlSaver.mysqlSaver import Creator
+from mysqlSaver import Creator
 
 creator = Creator(conn)
 creator.database_creator("new_database")
@@ -130,7 +130,7 @@ creator.create_table(df, "new_table")
 ## Partitioning Tables
 
 ```python
-from mysqlSaver.mysqlSaver import Partition
+from mysqlSaver import Partition
 
 partitioner = Partition(conn)
 partitioner.create_partition_table(
