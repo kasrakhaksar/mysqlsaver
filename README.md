@@ -1,11 +1,15 @@
-<h1 align="center"><strong>MySqlSaver</strong></h1>
+<h1 align="center">
+  <img src="../mysqlSaver package/mysqlSaver/icon/icon.png" alt="logo" style="width: 32px; height: 32px; border-radius: 50%; vertical-align: middle; margin-right: 8px;">
+  <strong>MySqlSaver</strong>
+</h1>
 <p align="center">
-    Effortlessly save your pandas DataFrames into MySQL with automatic table creation and support for primary keys and partitioning.
-    <br><br>
-    <a href="https://github.com/kasrakhaksar/mysqlsaver" target="_blank">
-        <img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" alt="GitHub" />
-    </a>
+  Effortlessly save your pandas DataFrames into MySQL with automatic table creation and support for primary keys and partitioning.
+  <br><br>
+  <a href="https://github.com/kasrakhaksar/mysqlsaver" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repo-blue?logo=github" alt="GitHub" />
+  </a>
 </p>
+
 
 ---
 
