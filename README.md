@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/kasrakhaksar/mysqlsaver/refs/heads/master/mysqlSaver/icon/icon.png" alt="logo" style="width: 32px; height: 32px; border-radius: 50%; vertical-align: middle; margin-right: 8px;">
+  <img src="https://raw.githubusercontent.com/kasrakhaksar/mysqlsaver/refs/heads/master/mysqlSaver/icon/icon.png" alt="logo" width="32">
   <strong>MySqlSaver</strong>
 </h1>
 <p align="center">
